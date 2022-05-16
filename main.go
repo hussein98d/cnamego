@@ -71,11 +71,11 @@ func main() {
 				domain, cname := getCname(domain, timeout)
 				// Check if this url has no cname
 				if len(cname) == 0 {
-					fmt.Println(domain) + "|" + ("has no Cname")
+					fmt.Println((domain) + "|" + ("has no Cname"))
 				} else {
 					// Remove the last dot in cname
 					cname = strings.Trim(cname, ".")
-					fmt.Println(domain) + "|" + (cname)
+					fmt.Println((domain) + "|" + (cname))
 				}
 			}
 		}()
