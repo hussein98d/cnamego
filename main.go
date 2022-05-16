@@ -53,9 +53,6 @@ func main() {
 		return
 	}
 	// Print the OutPut Banner
-	banner()
-	fmt.Println("Starting...")
-	time.Sleep(time.Duration(3) * time.Second)
 	fmt.Println("\n")
 	// Start reading the file and pass urls channel to function to store the lines on it
 	urls := getlines(filename)
