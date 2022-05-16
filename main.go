@@ -53,10 +53,6 @@ func main() {
 		return
 	}
 	// Print the OutPut Banner
-	banner()
-	fmt.Println("Starting...")
-	time.Sleep(time.Duration(3) * time.Second)
-	fmt.Println("\n")
 	// Start reading the file and pass urls channel to function to store the lines on it
 	urls := getlines(filename)
 	// set the WaitGroup
@@ -74,11 +70,11 @@ func main() {
 				domain, cname := getCname(domain, timeout)
 				// Check if this url has no cname
 				if len(cname) == 0 {
-					fmt.Println(domColor(domain) + " -> " + erColor("has no Cname"))
+					fmt.Println(domColor(domain) + "   " + erColor("no cname"))
 				} else {
 					// Remove the last dot in cname
 					cname = strings.Trim(cname, ".")
-					fmt.Println(domColor(domain) + " -> " + cnColor(cname))
+					fmt.Println(domColor(domain) + "   " + cnColor(cname))
 				}
 			}
 		}()
